@@ -1,0 +1,19 @@
+---
+
+- hosts: TARGETSERVER
+
+  become: yes
+
+  tasks:
+
+    - name: Install Nginx web server
+      apt:
+        name: nginx
+        state: present
+
+    - name: Start and enable Nginx Service
+      service:
+        name: nginx
+        state: started
+        enabled: yes
+
